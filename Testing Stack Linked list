@@ -1,0 +1,72 @@
+//Implementation of stack using Linked List
+
+#include <stdio.h>
+#include <stdlib.h>
+struct Node
+{
+    int data;
+    struct Node *next;
+}
+Node top,new;
+
+void Push()
+{
+    int var;
+    new=(struct Node *)malloc(sizeof(struct Node));
+    printf("\n Enter the Data");
+    scanf("%d",&var);
+    new->data=var;
+    new->next=NULL;
+    
+    if(top==NULL)
+    {
+        top=new;
+    }
+    else
+    {
+        new->next = top;
+        top=new;
+    }
+    
+}
+
+int pop()
+{
+    int item;
+    struct Node *temp;
+    temp=top;
+    item = temp->data;
+    top =temp->next;
+    free (temp);
+    return item;
+    
+}
+
+void display()
+{
+    struct Node *temp;
+    temp= top;
+    while(temp!=NULL)
+    {
+        printf("%d-->",temp->data);
+        temp=temp->next;
+        
+    }
+    printf("NULL");
+}
+
+int main()
+{
+    Push();
+    Push();
+    Push();
+    Push();
+    display();
+    
+    printf("\nThe item removed is=%d\n",pop());
+    display();
+    printf("\nThe item removed is=%d\n",pop());
+    display();
+
+    return 0;
+}
