@@ -64,6 +64,13 @@ int main()
     Push();
     Push();
     Push();
+     Push();
+    Push();
+    Push();
+    Push();
+    Push();
+    Push();
+    Push();
     display();
     
     printf("\nThe item removed is=%d\n",pop());
