@@ -1,0 +1,20 @@
+import itertools
+def main():
+    vC=input()
+    NoP=int(input())
+    for i in range(NoP):
+        VC=vC[:]
+        BC=input()
+        for letter in BC:
+            if letter in VC:
+                VC=VC[VC.index(letter):]
+                #print(VC)
+            else:
+                print("NEGATIVE")
+                break
+        else:
+            print("POSITIVE")
+           
+ # Write code here 
+
+main()
